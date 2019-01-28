@@ -12,7 +12,7 @@ class Link(models.Model):
 
 #o metodo estatico ira retornar uma unica letra
     @staticmethod
-    def expandir(slug):
+    def expandir(slug): #vai retonar a pk em string e converter para numero
         link_id= int(slug)
         l=Link.objects.get(pk=link_id)
         return l.url

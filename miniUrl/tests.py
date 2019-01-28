@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Link
+from django.urls import reverse
 
 # Create your tests here.
 #vai fazer o teste se a url ira encurtar
@@ -17,3 +18,8 @@ class MiniUrl(TestCase):
         link.save()
         exp_url= Link.expand(url_pequena)#url extendida
         self.assertEqual(url, exp_url)
+   #vai fazer o teste da homepage, se ele existe
+    def teste_homepage(self):
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code,200)
+        self.assertIn("form",response.context)
