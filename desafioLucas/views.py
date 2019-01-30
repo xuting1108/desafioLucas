@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from .models import Link
+from desafioLucas.models import Link
 from django.views.generic.edit import CreateView
 
 # Create your views here.

@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Link
+from desafioLucas.models import Link
 from django.urls import reverse
 
 # Create your tests here.
