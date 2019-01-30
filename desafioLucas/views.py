@@ -13,15 +13,15 @@ class LinkCriado(CreateView):
     def form_valid(self, form):
         prev = Link.objects.filter(url=form.instance.url)
         if prev:
-            return redirect("link_show", pk=prev[0].pk)
+            return redirect("mostar_link", pk=prev[0].pk)
         return super(LinkCriado, self).form_valid(form)
 
 
-class LinkShow(DetailView):
+class MostrarLink(DetailView):
     model = Link
 
 
-class RedirectToLongURL(RedirectView):
+class MostrarUrlGrande(RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
